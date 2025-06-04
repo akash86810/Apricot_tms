@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors */
+    --primary-background: #fafafa;
+    --primary-foreground: #444444;
+
+    /* Secondary Colors */
+    --secondary-background: #f6f6f6;
+    --secondary-foreground: #5d5d5d;
+
+    /* Accent Colors */
+    --accent-color: #0b60b0;
+    --accent-foreground: #ffffff;
+
+    /* Border Colors */
+    --border-primary: #888888;
+    --border-secondary: #d1d1d1;
+    --border-light: #e7e7e7;
+
+    /* Text Colors */
+    --text-primary: #454545;
+    --text-secondary: #4f4f4f;
+    --text-muted: #888888;
+  }
+}
+
+@layer utilities {
+  /* Background Color Utilities */
+  .bg-primary-background {
+    background-color: var(--primary-background);
+  }
+
+  .bg-secondary-background {
+    background-color: var(--secondary-background);
+  }
+
+  .bg-accent {
+    background-color: var(--accent-color);
+  }
+
+  /* Text Color Utilities */
+  .text-primary {
+    color: var(--text-primary);
+  }
+
+  .text-secondary {
+    color: var(--text-secondary);
+  }
+
+  .text-muted {
+    color: var(--text-muted);
+  }
+
+  .text-accent {
+    color: var(--accent-color);
+  }
+
+  /* Border Color Utilities */
+  .border-primary {
+    border-color: var(--border-primary);
+  }
+
+  .border-secondary {
+    border-color: var(--border-secondary);
+  }
+
+  .border-light {
+    border-color: var(--border-light);
+  }
+}
