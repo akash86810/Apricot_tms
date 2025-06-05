@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Chip from '../../components/ui/Chip';
 import InputField from '../../components/ui/InputField';
 import Button from '../../components/ui/ActionButton';
+import { useNavigate } from 'react-router-dom'; 
 
 const FilterSection = ({ onFilterChange, onViewChange, onCreateCase }) => {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -17,6 +18,8 @@ const FilterSection = ({ onFilterChange, onViewChange, onCreateCase }) => {
     'Change Requests',
   ];
 
+    const navigate = useNavigate();
+
   const handleFilterClick = (filter) => {
     setActiveFilter(filter);
     if (onFilterChange) {
@@ -28,10 +31,21 @@ const FilterSection = ({ onFilterChange, onViewChange, onCreateCase }) => {
     setSearchTerm(e.target.value);
   };
 
-  const handleViewChange = (view) => {
-    setActiveView(view);
-    if (onViewChange) {
-      onViewChange(view);
+  //   const handleViewChange = (view) => {
+  //     setActiveView(view);
+  //   if (view === 'Grid View') {
+  //     navigate('/grid-view');  // navigates to Grid View page route
+  //   } else if (view === 'List View') {
+  //     navigate('/list-view');  // example for another view
+  //   }
+  // };
+
+    const handleViewChange = (view) => {
+    setActiveView(view);  // 🟢 Update the active view locally
+    if (view === 'Grid View') {
+      navigate('/grid-view');
+    } else if (view === 'List View') {
+      navigate('/dashboard');  // 🟢 Replace with your actual "List View" route
     }
   };
 
@@ -80,18 +94,19 @@ const FilterSection = ({ onFilterChange, onViewChange, onCreateCase }) => {
 
           {/* Grid View Button */}
           <Button
-            onClick={() => handleViewChange('Grid View')}
-            variant={activeView === 'Grid View' ? 'secondary' : 'outline'}
-            size="medium"
-            className="flex items-center gap-2"
-          >
-            <img
-              src="/images/img_antdesignproductoutlined.svg"
-              alt="Grid View"
-              className="w-5 h-5"
-            />
-            Grid View
-          </Button>
+      type="button"
+      onClick={() => handleViewChange('Grid View')}
+      variant={activeView === 'Grid View' ? 'secondary' : 'outline'}
+      size="medium"
+      className="flex items-center gap-2"
+    >
+      <img
+        src="/images/img_antdesignproductoutlined.svg"
+        alt="Grid View"
+        className="w-5 h-5"
+      />
+      Grid View
+    </Button>
 
           {/* Create Case Button */}
           <Button
