@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../../components/ui/ActionButton';
+import Button from '../../components/ui/MyTickets_components/ActionButton';
 
 const TicketTable = ({ tickets = [] }) => {
   const getStatusVariant = (status) => {

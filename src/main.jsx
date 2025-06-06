@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
-import '@styles/index.css';
-import '@styles/FAQ.css';
-import '@styles/MyTicket.css';
+import '@styles/login_css/index.css';
+import '@styles/FAQ_css/FAQ.css';
+import '@styles/MyTicket_css/MyTicket.css';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App />
