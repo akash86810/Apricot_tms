@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Button from '../../components/ui/Button';
-import InputField from '../../components/ui/InputField';
+import Button from '../../components/ui/Login_Components/Button';
+import InputField from '../../components/ui/Login_Components/InputField';
 import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
@@ -51,21 +51,21 @@ const LoginPage = () => {
   };
 
   const handleLogin = () => {
-    if (validateForm()) {
-      // Simulate login process
-      console.log('Login attempt with:', formData);
-      // alert('Login successful! Welcome to Apricot Platform.');
+    // if (validateForm()) {
+    //   // Simulate login process
+    //   console.log('Login attempt with:', formData);
+    //   // alert('Login successful! Welcome to Apricot Platform.');
 
-      // Reset form after successful login
-      setFormData({
-        clientId: '',
-        userId: '',
-        password: '',
-      });
+    //   // Reset form after successful login
+    //   setFormData({
+    //     clientId: '',
+    //     userId: '',
+    //     password: '',
+    //   });
 
-      // Navigate to FAQ page
-      navigate('/faq');
-    }
+    //   // Navigate to FAQ page
+    // }
+    navigate('/faq');
   };
 
   const handleSubmit = (e) => {
@@ -98,7 +98,7 @@ const LoginPage = () => {
                 placeholder="Enter your client id"
                 value={formData.clientId}
                 onChange={handleInputChange('clientId')}
-                error={errors.clientId}
+                // error={errors.clientId}
               />
             </div>
 
@@ -109,7 +109,7 @@ const LoginPage = () => {
                 placeholder="Enter your username"
                 value={formData.userId}
                 onChange={handleInputChange('userId')}
-                error={errors.userId}
+                // error={errors.userId}
               />
             </div>
 
@@ -121,7 +121,7 @@ const LoginPage = () => {
                 placeholder="Enter your password"
                 value={formData.password}
                 onChange={handleInputChange('password')}
-                error={errors.password}
+                // error={errors.password}
               />
             </div>
 

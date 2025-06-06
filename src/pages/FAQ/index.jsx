@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Header from '../../components/ui/Header';
-import Tabs from '../../components/ui/Tabs';
-import Accordion from '../../components/ui/Accordion';
+import Tabs from '../../components/ui/FAQ_Components/Tabs';
+import Accordion from '../../components/ui/FAQ_Components/Accordion';
+import PageHeader from '@/components/ui/MyTickets_components/PageHeader';
 
 const FAQPage = () => {
   const navigate = useNavigate();
@@ -70,7 +70,7 @@ const FAQPage = () => {
     console.log(`Switched to tab: ${tabs[tabIndex].label}`);
     switch (tabIndex) {
       case 0:
-        navigate('/dashboard');
+        navigate('/MyTickets');
         break;
       case 3:
         navigate('/trainings');
@@ -86,10 +86,12 @@ const FAQPage = () => {
 
   return (
     <div className="min-h-screen bg-[#fafafa]">
-      <Header />
+      <PageHeader />
 
+      {/* <div> */}
       {/* Navigation Tabs */}
       <Tabs tabs={tabs} defaultActiveTab={1} onTabChange={handleTabChange} />
+      {/* </div> */}
 
       {/* FAQ Content */}
       <div className="px-8 py-8">
