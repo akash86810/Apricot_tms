@@ -16,7 +16,7 @@ const PageHeader = () => {
   };
 
   return (
-    <header className="bg-[#fafafa] px-8 py-6 flex items-center justify-between">
+    <header className="bg-[#fafafa] px-8 py-4 flex items-center justify-between ">
       {/* Logo Section */}
       <div className="flex items-center">
         <img
@@ -24,14 +24,14 @@ const PageHeader = () => {
           alt="Apricot Logo"
           className="w-[67px] h-[44px] mr-4"
         />
-        <h1 className="text-[48px] font-medium leading-[45px] text-[#444444] font-league-spartan">
+        <h1 className="text-[47px] font-medium leading-[45px] text-[#444444] font-league-spartan">
           apricot
         </h1>
       </div>
 
       {/* Page Title */}
       <div className="flex-1 ml-8">
-        <h2 className="text-[24px] font-medium leading-[36px] text-[#5d5d5d] font-poppins">
+        <h2 className="text-[20px] font-medium leading-[36px] text-[#5d5d5d] font-poppins">
           Customer Support
         </h2>
       </div>
@@ -43,7 +43,7 @@ const PageHeader = () => {
           alt="User Icon"
           className="w-[24px] h-[24px] mr-2"
         />
-        <span className="text-[20px] font-normal leading-[25px] text-[#4f4f4f] font-inter mr-2">
+        <span className="text-[18px] font-normal leading-[25px] text-[#4f4f4f] font-inter mr-2">
           Smalla28
         </span>
         <button onClick={() => setIsUserDropdownOpen(!isUserDropdownOpen)} className="p-1">

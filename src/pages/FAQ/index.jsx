@@ -10,7 +10,6 @@ const FAQPage = () => {
   const tabs = [
     { label: 'My Tickets' },
     { label: "FAQ's" },
-    // { label: "FAQ's" },
     { label: 'Trainings' },
     { label: 'New Requirement' },
   ];

@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import Chip from '../../components/ui/MyTickets_components/Chip';
+import { useNavigate } from 'react-router-dom';
 
 const TicketCard = ({ ticket }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const navigate = useNavigate();
 
-  const handleMoreClick = () => {
+  const handleMoreClick = (e) => {
+    e.stopPropagation(); // Prevent triggering card click
     setIsExpanded(!isExpanded);
   };
 
@@ -19,8 +22,16 @@ const TicketCard = ({ ticket }) => {
     }
   };
 
+  const handleCardClick = () => {
+
+    navigate(`/ticket/${ticket.id}`,{ state: { ticket } });
+  };
+
   return (
-    <div className="bg-white border border-[#d1d1d1] rounded-lg p-4 h-[168px] w-full max-w-full relative">
+    <div
+      className="bg-white border border-[#d1d1d1] rounded-lg p-4 h-[168px] w-full max-w-full relative cursor-pointer"
+      onClick={handleCardClick}
+    >
       {/* Priority Indicator */}
       <div className="absolute top-4 left-4 w-[14px] h-[14px] bg-[#ff3b30] rounded-full flex-shrink-0"></div>
 
@@ -44,7 +55,7 @@ const TicketCard = ({ ticket }) => {
         </span>
       </div>
 
-      {/* Title - prevent wrapping */}
+      {/* Title */}
       <h3 className="text-[18px] font-medium leading-[22px] text-[#454545] mb-2 ml-4 font-inter truncate">
         {ticket.title}
       </h3>

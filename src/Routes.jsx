@@ -9,6 +9,7 @@ import FAQPage from './pages/FAQ';
 import GridIndex from './pages/Gridview/GridIndex';
 import MyTickets from './pages/dashboard/MyTickets';
 import TicketDetail from './pages/Gridview/TicketDetail';
+import SecondHeader from './components/ui/Headers/SecondHeader';
 const AppRoutes = () => {
   return (
     <Router>
@@ -18,7 +19,9 @@ const AppRoutes = () => {
         <Route path="/faq" element={<FAQPage />} />
         <Route path="/MyTickets" element={<MyTickets />} />
         <Route path="/grid-view" element={<GridIndex />} />
-        <Route path="/ticket" element={<TicketDetail />} />
+       <Route path="/ticket/:ticketId" element={<TicketDetail />} />
+       <Route path="secondheader" element={<SecondHeader />} />
+
       </Routes>
     </Router>
   );
