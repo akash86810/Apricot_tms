@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Added import for navigation
+import { useNavigate } from 'react-router-dom';
 import Tabs from '../../components/ui/MyTickets_components/tabNavigation';
 import FilterSection from './FilterSection';
 import TicketTable from './TicketTable';
@@ -11,9 +11,8 @@ const MyTickets = () => {
   const [activeView, setActiveView] = useState('List View');
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
 
-  const navigate = useNavigate(); // Added navigation hook
+  const navigate = useNavigate();
 
-  // Sample ticket data based on the Figma design
   const sampleTickets = [
     {
       ticketNo: '33245',
@@ -127,7 +126,7 @@ const MyTickets = () => {
           <FilterSection
             onFilterChange={setActiveFilter}
             onViewChange={setActiveView}
-            onCreateCase={() => setIsCreateModalOpen(true)}
+            onCreateCase={() => navigate('/create-ticket')}
           />
           <TicketTable tickets={sampleTickets} />
         </div>
@@ -142,15 +141,6 @@ const MyTickets = () => {
         </div>
       ),
     },
-    // {
-    //   label: "FAQ's",
-    //   content: (
-    //     <div className="p-8 text-center">
-    //       <h3 className="text-xl font-semibold text-gray-600">FAQ Section</h3>
-    //       <p className="text-gray-500 mt-2">Additional FAQ content will be displayed here.</p>
-    //     </div>
-    //   ),
-    // },
     {
       label: 'Trainings',
       content: (
@@ -173,10 +163,9 @@ const MyTickets = () => {
     },
   ];
 
-  // Modified to navigate to FAQ page
   const handleTabChange = (index, tab) => {
     if (tab.label === "FAQ's") {
-      navigate('/faq'); // Navigate to FAQ page route
+      navigate('/faq');
     } else {
       console.log('Tab changed to:', tab.label);
     }
@@ -184,13 +173,12 @@ const MyTickets = () => {
 
   const handleCreateCase = () => {
     console.log('Creating new case...');
-    // Add your create case logic here
     alert('Create Case functionality would be implemented here');
     setIsCreateModalOpen(false);
   };
 
   return (
-    <div className="min-h-screen bg-[#fafafa]">
+    <div className="min-h-screen bg-[#fafafa] text-base scale-100">
       <PageHeader />
 
       <main className="px-8 py-6">
@@ -202,7 +190,7 @@ const MyTickets = () => {
         />
       </main>
 
-      {/* Create Case Modal */}
+      {/* Create Case Modal - still included in case needed later */}
       <Modal
         isOpen={isCreateModalOpen}
         onClose={() => setIsCreateModalOpen(false)}

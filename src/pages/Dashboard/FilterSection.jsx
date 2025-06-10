@@ -45,7 +45,7 @@ const FilterSection = ({ onFilterChange, onViewChange, onCreateCase }) => {
     if (view === 'Grid View') {
       navigate('/grid-view');
     } else if (view === 'List View') {
-      navigate('/dashboard'); // 🟢 Replace with your actual "List View" route
+      navigate('/MyTickets'); // 🟢 Replace with your actual "List View" route
     }
   };
 

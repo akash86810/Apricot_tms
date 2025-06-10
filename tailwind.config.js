@@ -58,6 +58,7 @@ module.exports = {
           muted: 'var(--text-muted, #888888)',
           light: 'var(--text-light)',
           dark: 'var(--text-dark)',
+          gray: 'var(--text-gray)',
         },
         // Status group
         status: {
@@ -66,6 +67,15 @@ module.exports = {
           'high-priority': 'var(--status-high-priority)',
           accent: 'var(--status-accent)',
         },
+        // Additional bg group from second config
+        bg: {
+          white: 'var(--bg-white)',
+          grayLight: 'var(--bg-gray-light)',
+        },
+      },
+      boxShadow: {
+        light: '0px 1px 2px rgba(16, 24, 40, 0.05)',
+        medium: '0px 2px 5px rgba(16, 24, 40, 0.12)',
       },
     },
   },

@@ -8,6 +8,7 @@ import FAQPage from './pages/FAQ';
 
 import GridIndex from './pages/Gridview/GridIndex';
 import MyTickets from './pages/dashboard/MyTickets';
+import CreateTicketPage from './pages/Create_Tickets/CreateTicket';
 const AppRoutes = () => {
   return (
     <Router>
@@ -17,6 +18,7 @@ const AppRoutes = () => {
         <Route path="/faq" element={<FAQPage />} />
         <Route path="/MyTickets" element={<MyTickets />} />
         <Route path="/grid-view" element={<GridIndex />} />
+        <Route path="/create-ticket" element={<CreateTicketPage />} />
       </Routes>
     </Router>
   );
