@@ -1,12 +1,63 @@
 import React, { useState, useEffect } from 'react';
-import Header from './Header';
-import Tabs from '../../components/ui/FAQ_Components/Tabs';
+// import Header from './Header';
+import Tabs from '../../components/ui/MyTickets_components/tabNavigation';
+
 import FilterSection from '../../pages/dashboard/FilterSection';
 import TicketBoard from './TicketBoard';
+import PageHeader from '@/components/ui/MyTickets_components/PageHeader';
 
 const GridIndex = () => {
   const [filteredTickets, setFilteredTickets] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const [activeFilter, setActiveFilter] = useState('All');
+  const [activeView, setActiveView] = useState('Grid View');
+    const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
+  
+
+  const tabsData = [
+    {
+      label: 'My Tickets',
+      content: (
+        <div className="space-y-6">
+          <FilterSection
+            onFilterChange={setActiveFilter}
+            onViewChange={setActiveView}
+            onCreateCase={() => setIsCreateModalOpen(true)}
+          />
+          {/* <TicketTable tickets={sampleTickets} /> */}
+        </div>
+      ),
+    },
+    {
+      label: "FAQ's",
+      content: (
+        <div className="p-8 text-center">
+          <h3 className="text-xl font-semibold text-gray-600">FAQ Section</h3>
+          <p className="text-gray-500 mt-2">Frequently asked questions will be displayed here.</p>
+        </div>
+      ),
+    },
+    {
+      label: 'Trainings',
+      content: (
+        <div className="p-8 text-center">
+          <h3 className="text-xl font-semibold text-gray-600">Training Materials</h3>
+          <p className="text-gray-500 mt-2">
+            Training resources and materials will be displayed here.
+          </p>
+        </div>
+      ),
+    },
+    {
+      label: 'New Requirement',
+      content: (
+        <div className="p-8 text-center">
+          <h3 className="text-xl font-semibold text-gray-600">New Requirements</h3>
+          <p className="text-gray-500 mt-2">Submit new requirements and feature requests here.</p>
+        </div>
+      ),
+    },
+  ];
 
   // Sample ticket data based on the Figma design
   const allTickets = [
@@ -202,23 +253,21 @@ const GridIndex = () => {
 
   return (
     <div className="min-h-screen bg-[#fafafa]">
-      <Header />
+      <PageHeader/>
 
       {/* Navigation Tabs */}
       <div className="bg-[#f6f6f6] border-b border-[#e7e7e7] px-8">
         <Tabs
-          tabs={navigationTabs.map((tab, index) => ({
-            label: tab.label,
-            content: null,
-          }))}
-          defaultActiveTab={1} // Tickets tab is active
+          tabs={tabsData}
+          defaultActiveTab={0}
           onTabChange={handleTabChange}
+          className="bg-white rounded-lg shadow-sm"
         />
       </div>
 
       {/* Main Content */}
       <div className="p-8">
-        <FilterSection onFilterChange={handleFilterChange} onSearchChange={handleSearchChange} />
+        {/* <FilterSection onFilterChange={handleFilterChange} onSearchChange={handleSearchChange} /> */}
 
         <div className="ticket-board-container">
           <TicketBoard tickets={filteredTickets} />

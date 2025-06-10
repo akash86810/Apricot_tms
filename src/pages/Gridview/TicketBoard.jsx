@@ -79,3 +79,4 @@ const TicketBoard = ({ tickets }) => {
 };
 
 export default TicketBoard;
+

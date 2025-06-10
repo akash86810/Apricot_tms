@@ -4,6 +4,16 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+       keyframes: {
+        dropdown: {
+          '0%': { opacity: 0, transform: 'scaleY(0.9)' },
+          '100%': { opacity: 1, transform: 'scaleY(1)' },
+        },
+      },
+      animation: {
+        dropdown: 'dropdown 300ms ease-out',
+      },
+
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
