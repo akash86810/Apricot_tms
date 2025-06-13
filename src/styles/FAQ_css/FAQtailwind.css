@@ -73,7 +73,7 @@
   }
 }
 
-/* @layer base {
+@layer base {
   html,
   body {
     transform: scale(0.8);
@@ -83,16 +83,4 @@
     margin: 0;
     padding: 0;
   }
-} */
-
-/* App.css or index.css */
-html,
-body {
-  transform: scale(0.9); /* 0.9 = zoom out, 1.1 = zoom in */
-  transform-origin: top left;
-  width: 111%; /* optional to avoid white edges */
-  height: 111%;
-  overflow: hidden; /* hides scroll if any */
-  margin: 0;
-  padding: 0;
 }
