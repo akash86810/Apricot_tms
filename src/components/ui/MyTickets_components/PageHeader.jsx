@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import Dropdown from './Dropdown';
 
-const PageHeader = () => {
+const PageHeader = ({ color}) => {
+   const location = useLocation();
+
+   // Path check – Ticket Details page la irukka nu
+  const isTicketDetailsPage = location.pathname.includes('/ticket/');
+
   const [isUserDropdownOpen, setIsUserDropdownOpen] = useState(false);
 
   const userDropdownOptions = [
@@ -16,7 +22,11 @@ const PageHeader = () => {
   };
 
   return (
-    <header className="bg-[#fafafa] px-8 py-4 flex items-center justify-between ">
+   <header
+      className={`${
+        color ? color : 'bg-[#fafafa]'
+      } px-8 py-4 flex items-center justify-between`}
+    >
       {/* Logo Section */}
       <div className="flex items-center">
         <img
@@ -37,6 +47,7 @@ const PageHeader = () => {
       </div>
 
       {/* User Profile Section */}
+      {!isTicketDetailsPage  && (
       <div className="flex items-center relative">
         <img
           src="/images/img_majesticonsuserline.svg"
@@ -63,7 +74,7 @@ const PageHeader = () => {
             />
           </div>
         )}
-      </div>
+      </div>)}
     </header>
   );
 };
