@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 const DropdownButtons = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -41,7 +41,6 @@ const DropdownButtons = () => {
             <div className="ml-16 py-2 font-medium text-[14px] leading-none tracking-normal text-[#29CB00] font-inter">Closed</div>
             <div className="ml-16 py-2 font-medium text-[14px] leading-none tracking-normal text-[#454545] font-inter">Problem</div>
             <div className="ml-8 py-2 font-medium text-[14px] leading-none tracking-normal text-[#454545] font-inter">Change request</div>
-
           </div>
         )}
       </div>

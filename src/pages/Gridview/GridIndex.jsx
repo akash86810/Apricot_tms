@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 // import Header from './Header';
 import Tabs from '../../components/ui/MyTickets_components/tabNavigation';
 
-import FilterSection from '../../pages/dashboard/FilterSection';
+import FilterSection from '../MyTickets/FilterSection';
 import TicketBoard from './TicketBoard';
 import PageHeader from '@/components/ui/MyTickets_components/PageHeader';
 
@@ -11,8 +11,7 @@ const GridIndex = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeFilter, setActiveFilter] = useState('All');
   const [activeView, setActiveView] = useState('Grid View');
-    const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
-  
+  const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
 
   const tabsData = [
     {
@@ -253,7 +252,7 @@ const GridIndex = () => {
 
   return (
     <div className="min-h-screen bg-[#fafafa]">
-      <PageHeader/>
+      <PageHeader />
 
       {/* Navigation Tabs */}
       <div className="bg-[#f6f6f6] border-b border-[#e7e7e7] px-8">
