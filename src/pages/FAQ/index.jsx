@@ -69,7 +69,7 @@ const FAQPage = () => {
     console.log(`Switched to tab: ${tabs[tabIndex].label}`);
     switch (tabIndex) {
       case 0:
-        navigate('/MyTickets');
+        navigate('/dashboard');
         break;
       case 3:
         navigate('/trainings');

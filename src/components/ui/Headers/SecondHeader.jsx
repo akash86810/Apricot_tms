@@ -2,13 +2,13 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Tabs from '../FAQ_Components/Tabs';
 import PageHeader from '@/components/ui/MyTickets_components/PageHeader';
-import FilterSection from '@/pages/Dashboard/FilterSection';
-
+import FilterSection from '@/pages/MyTickets/FilterSection';
+// import TicketTable from '@/pages/dashboard/TicketTable';
 
 const SecondHeader = () => {
   const navigate = useNavigate();
-        
-    const tabs = [
+
+  const tabs = [
     { label: 'My Tickets' },
     { label: "FAQ's" },
     { label: 'Trainings' },
@@ -34,11 +34,12 @@ const SecondHeader = () => {
   };
   return (
     <>
-    <PageHeader/>
-    <Tabs tabs={tabs} defaultActiveTab={1} onTabChange={handleTabChange} />
-    <FilterSection/>
+      <PageHeader />
+      <Tabs tabs={tabs} defaultActiveTab={1} onTabChange={handleTabChange} />
+      <FilterSection />
+      {/* <TicketTable /> */}
     </>
-  )
-}
+  );
+};
 
-export default SecondHeader
+export default SecondHeader;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 const DropdownButtons = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -41,7 +41,6 @@ const DropdownButtons = () => {
             <div className="">Closed</div>
             <div className="">Problem</div>
             <div className="">Change request</div>
-
           </div>
         )}
       </div>
@@ -74,7 +73,6 @@ const DropdownButtons = () => {
             <div className="">Closed</div>
             <div className="">Problem</div>
             <div className="">Change request</div>
-
           </div>
         )}
       </div>

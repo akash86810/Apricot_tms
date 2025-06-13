@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors */
+    --primary-blue: #006fc9;
+    --primary-blue-hover: #005ba3;
+    --primary-background: #f1f7fe;
+    --primary-foreground: #121722;
+
+    /* Secondary Colors */
+    --secondary-background: #ffffff;
+    --secondary-foreground: #333333;
+    --secondary-light: #f7f7f7;
+    --secondary-dark: #222222;
+
+    /* Status Colors */
+    --status-assigned: #007aff;
+    --status-closed: #34c759;
+    --status-high-priority: #d80000;
+
+    /* Text Colors */
+    --text-primary: #5d5d5d;
+    --text-secondary: #454545;
+    --text-white: #f6f6f6;
+    --text-blue: #42a0ee;
+
+    /* Background Colors */
+    --bg-gray-light: #fafafa;
+    --bg-blue-light: #f1f7fe;
+
+    /* Border Colors */
+    --border-primary: #cccccc;
+    --border-secondary: #999999;
+    --border-light: #e0e0e0;
+    --border-dark: #666666;
+  }
+}
+
+@layer utilities {
+  /* Background Color Utilities */
+  .bg-primary-blue {
+    background-color: var(--primary-blue);
+  }
+
+  .bg-primary-blue-hover {
+    background-color: var(--primary-blue-hover);
+  }
+
+  .bg-primary-light {
+    background-color: var(--primary-background);
+  }
+
+  .bg-secondary-white {
+    background-color: var(--secondary-background);
+  }
+
+  .bg-gray-light {
+    background-color: var(--bg-gray-light);
+  }
+
+  .bg-blue-light {
+    background-color: var(--bg-blue-light);
+  }
+
+  /* Text Color Utilities */
+  .text-primary-gray {
+    color: var(--text-primary);
+  }
+
+  .text-secondary-gray {
+    color: var(--text-secondary);
+  }
+
+  .text-white-light {
+    color: var(--text-white);
+  }
+
+  .text-blue-light {
+    color: var(--text-blue);
+  }
+
+  /* Status Color Utilities */
+  .bg-status-assigned {
+    background-color: var(--status-assigned);
+  }
+
+  .bg-status-closed {
+    background-color: var(--status-closed);
+  }
+
+  .text-status-high {
+    color: var(--status-high-priority);
+  }
+
+  /* Border Color Utilities */
+  .border-primary {
+    border-color: var(--border-primary);
+  }
+
+  .border-secondary {
+    border-color: var(--border-secondary);
+  }
+
+  .border-light {
+    border-color: var(--border-light);
+  }
+
+  .border-dark {
+    border-color: var(--border-dark);
+  }
+}

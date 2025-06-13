@@ -65,7 +65,7 @@ const LoginPage = () => {
 
     //   // Navigate to FAQ page
     // }
-    navigate('/faq');
+    navigate('/dashboard');
   };
 
   const handleSubmit = (e) => {
