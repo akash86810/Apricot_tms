@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-// import Header from './Header';
-import Tabs from '../../components/ui/MyTickets_components/tabNavigation';
+import { useNavigate } from 'react-router-dom';
 
+// import Header from './Header';
+// import Tabs from '../../components/ui/MyTickets_components/tabNavigation';
+import Tabs from '../../components/ui/FAQ_Components/Tabs';
 import FilterSection from '../MyTickets/FilterSection';
 import TicketBoard from './TicketBoard';
 import PageHeader from '@/components/ui/MyTickets_components/PageHeader';
@@ -13,52 +15,29 @@ const GridIndex = () => {
   const [activeView, setActiveView] = useState('Grid View');
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
 
-  const tabsData = [
-    {
-      label: 'My Tickets',
-      content: (
-        <div className="space-y-6">
-          <FilterSection
-            onFilterChange={setActiveFilter}
-            onViewChange={setActiveView}
-            onCreateCase={() => setIsCreateModalOpen(true)}
-          />
-          {/* <TicketTable tickets={sampleTickets} /> */}
-        </div>
-      ),
-    },
-    {
-      label: "FAQ's",
-      content: (
-        <div className="p-8 text-center">
-          <h3 className="text-xl font-semibold text-gray-600">FAQ Section</h3>
-          <p className="text-gray-500 mt-2">Frequently asked questions will be displayed here.</p>
-        </div>
-      ),
-    },
-    {
-      label: 'Trainings',
-      content: (
-        <div className="p-8 text-center">
-          <h3 className="text-xl font-semibold text-gray-600">Training Materials</h3>
-          <p className="text-gray-500 mt-2">
-            Training resources and materials will be displayed here.
-          </p>
-        </div>
-      ),
-    },
-    {
-      label: 'New Requirement',
-      content: (
-        <div className="p-8 text-center">
-          <h3 className="text-xl font-semibold text-gray-600">New Requirements</h3>
-          <p className="text-gray-500 mt-2">Submit new requirements and feature requests here.</p>
-        </div>
-      ),
-    },
-  ];
+  
 
   // Sample ticket data based on the Figma design
+  
+  
+  const tabs = [
+  { label: 'My Tickets', path: '/dashboard'},
+  { label: "FAQ's", path: '/faq' },
+  { label: 'Trainings', path: '/trainings' },
+  { label: 'New Requirement', path: '/new-requirement' },
+];
+
+  
+  const navigate = useNavigate();
+
+const handleTabChange = (index) => {
+  const selectedTab = tabs[index];
+  if (selectedTab && selectedTab.path) {
+    navigate(selectedTab.path);
+  }
+};
+
+  
   const allTickets = [
     {
       id: 1,
@@ -235,9 +214,9 @@ const GridIndex = () => {
     { label: 'Product Team', value: 'productTeam' },
   ];
 
-  const handleTabChange = (tabIndex) => {
-    console.log('Tab changed to:', navigationTabs[tabIndex].value);
-  };
+  // const handleTabChange = (tabIndex) => {
+  //   console.log('Tab changed to:', navigationTabs[tabIndex].value);
+  // };
 
   const handleFilterChange = (filterValue) => {
     console.log('Filter changed to:', filterValue);
@@ -251,28 +230,30 @@ const GridIndex = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#fafafa]">
+    <>
+    {/* <div className="min-h-screen bg-[#fafafa]"> */}
       <PageHeader />
 
       {/* Navigation Tabs */}
-      <div className="bg-[#f6f6f6] border-b border-[#e7e7e7] px-8">
+      {/* <div className="bg-[#f6f6f6] border-b border-[#e7e7e7] px-8"> */}
         <Tabs
-          tabs={tabsData}
+          tabs={tabs}
           defaultActiveTab={0}
           onTabChange={handleTabChange}
           className="bg-white rounded-lg shadow-sm"
         />
-      </div>
+      {/* </div> */}
 
       {/* Main Content */}
-      <div className="p-8">
-        {/* <FilterSection onFilterChange={handleFilterChange} onSearchChange={handleSearchChange} /> */}
+      {/* <div className="p-0"> */}
+        <FilterSection onFilterChange={handleFilterChange} onSearchChange={handleSearchChange} />
 
-        <div className="ticket-board-container">
+        {/* <div className="ticket-board-container"> */}
           <TicketBoard tickets={filteredTickets} />
-        </div>
-      </div>
-    </div>
+        {/* </div> */}
+      {/* </div> */}
+    {/* </div> */}
+    </>
   );
 };
 

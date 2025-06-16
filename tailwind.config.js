@@ -88,6 +88,7 @@ module.exports = {
         medium: '0px 2px 5px rgba(16, 24, 40, 0.12)',
       },
     },
+    
   },
   plugins: [],
 };
