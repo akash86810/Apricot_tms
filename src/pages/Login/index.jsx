@@ -193,7 +193,7 @@ const LoginPage = () => {
   //   </div>
   // );
   return (
-    <div className="min-h-screen bg-white relative">
+    <div className="login-page min-h-screen bg-white relative">
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
         <div className="w-[480px] bg-[#f6f6f6] rounded-[30px] shadow-[0px_4px_12px_rgba(0,0,0,0.1)] p-10">
           {/* Logo and Brand */}

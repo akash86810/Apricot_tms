@@ -14,3 +14,12 @@ body {
 .font-league-spartan {
   font-family: 'League Spartan', sans-serif;
 }
+
+.login-page {
+  transform: scale(0.8);
+  transform-origin: top left;
+  width: 125%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}

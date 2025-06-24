@@ -5,6 +5,7 @@ import InputField from '../../components/ui/Create_Tickets_components/InputField
 import Textarea from '../../components/ui/Create_Tickets_components/Textarea';
 import Dropdown from '../../components/ui/Create_Tickets_components/Dropdown';
 import FileUpload from '../../components/ui/Create_Tickets_components/FileUpload';
+import '../../styles/Create_Tickets/index.css';
 
 const CreateTicket = () => {
   const [formData, setFormData] = useState({
@@ -121,7 +122,7 @@ const CreateTicket = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#fafafa]">
+    <div className="create-tickets min-h-screen bg-[#fafafa]">
       <Header />
 
       <main className="px-8 py-6">

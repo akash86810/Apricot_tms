@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Tabs from '../../components/ui/FAQ_Components/Tabs';
 import Accordion from '../../components/ui/FAQ_Components/Accordion';
 import PageHeader from '@/components/ui/MyTickets_components/PageHeader';
+import '../../styles/FAQ_css/FAQ.css';
 
 const FAQPage = () => {
   const navigate = useNavigate();
@@ -84,7 +85,7 @@ const FAQPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#fafafa]">
+    <div className="faq-page min-h-screen bg-[#fafafa]">
       <PageHeader
         className="Position: sticky;
 Top: 0;"

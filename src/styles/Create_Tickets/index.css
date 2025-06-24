@@ -13,3 +13,12 @@ body {
 * {
   box-sizing: border-box;
 }
+
+.create-tickets {
+  transform: scale(0.9);
+  transform-origin: top left;
+  width: 125%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
