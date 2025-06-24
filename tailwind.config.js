@@ -52,6 +52,7 @@ module.exports = {
           secondary: 'var(--background-secondary)',
           light: 'var(--background-light)',
           'table-alt': 'var(--background-table-alt)',
+          'gray-light': '#f5f4f5',
         },
         // Border group
         border: {
@@ -69,6 +70,9 @@ module.exports = {
           light: 'var(--text-light)',
           dark: 'var(--text-dark)',
           gray: 'var(--text-gray)',
+          heading: '#344054',
+          darkgray:'#344054',
+          lightgray:'#667085',
         },
         // Status group
         status: {
