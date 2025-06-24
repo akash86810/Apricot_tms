@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 // import Dropdown from './Dropdown';
 
-const PageHeader = ({ color}) => {
-   const location = useLocation();
+const PageHeader = ({ color }) => {
+  const location = useLocation();
 
-   // Path check – Ticket Details page la irukka nu
+  // Path check – Ticket Details page la irukka nu
   const isTicketDetailsPage = location.pathname.includes('/ticket/');
 
   const [isUserDropdownOpen, setIsUserDropdownOpen] = useState(false);
@@ -22,10 +22,8 @@ const PageHeader = ({ color}) => {
   };
 
   return (
-   <header
-      className={`${
-        color ? color : 'bg-[#fafafa]'
-      } px-8 py-4 flex items-center justify-between`}
+    <header
+      className={`${color ? color : 'bg-[#fafafa]'} px-8 py-4 flex items-center justify-between`}
     >
       {/* Logo Section */}
       <div className="flex items-center">
@@ -47,34 +45,35 @@ const PageHeader = ({ color}) => {
       </div>
 
       {/* User Profile Section */}
-      {!isTicketDetailsPage  && (
-      <div className="flex items-center relative">
-        <img
-          src="/images/img_majesticonsuserline.svg"
-          alt="User Icon"
-          className="w-[24px] h-[24px] mr-2"
-        />
-        <span className="text-[18px] font-normal leading-[25px] text-[#4f4f4f] font-inter mr-2">
-          Smalla28
-        </span>
-        <button onClick={() => setIsUserDropdownOpen(!isUserDropdownOpen)} className="p-1">
+      {!isTicketDetailsPage && (
+        <div className="flex items-center relative">
           <img
-            src="/images/img_arrowdropdown.svg"
-            alt="Dropdown Arrow"
-            className="w-[24px] h-[24px]"
+            src="/images/img_majesticonsuserline.svg"
+            alt="User Icon"
+            className="w-[24px] h-[24px] mr-2"
           />
-        </button>
-
-        {isUserDropdownOpen && (
-          <div className="absolute top-full right-0 mt-2 z-50">
-            <Dropdown
-              options={userDropdownOptions}
-              onSelect={handleUserDropdownSelect}
-              placeholder="Select option"
+          <span className="text-[18px] font-normal leading-[25px] text-[#4f4f4f] font-inter mr-2">
+            Smalla28
+          </span>
+          <button onClick={() => setIsUserDropdownOpen(!isUserDropdownOpen)} className="p-1">
+            <img
+              src="/images/img_arrowdropdown.svg"
+              alt="Dropdown Arrow"
+              className="w-[24px] h-[24px]"
             />
-          </div>
-        )}
-      </div>)}
+          </button>
+
+          {isUserDropdownOpen && (
+            <div className="absolute top-full right-0 mt-2 z-50">
+              <Dropdown
+                options={userDropdownOptions}
+                onSelect={handleUserDropdownSelect}
+                placeholder="Select option"
+              />
+            </div>
+          )}
+        </div>
+      )}
     </header>
   );
 };

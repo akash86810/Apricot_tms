@@ -85,7 +85,10 @@ const FAQPage = () => {
 
   return (
     <div className="min-h-screen bg-[#fafafa]">
-      <PageHeader />
+      <PageHeader
+        className="Position: sticky;
+Top: 0;"
+      />
 
       {/* <div> */}
       {/* Navigation Tabs */}
