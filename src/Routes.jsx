@@ -12,7 +12,8 @@ import TicketDetail from './pages/Gridview/TicketDetail';
 import SecondHeader from './components/ui/Headers/SecondHeader';
 import CreateTicketPage from './pages/Create_Tickets/CreateTicket';
 import TicketManagementDashboard from './pages/MyTickets';
-import NewRequirements from './pages/NewRequirements/NewRequirements';
+// import NewRequirements from './pages/NewRequirements/NewRequirements';
+
 // import AdminHeader from '../../Apricot_tms/src
 // /Admin/components/AdminHeader';
 import Dashboard from './Admin/pages/Dashboard';
@@ -35,7 +36,7 @@ const AppRoutes = () => {
 
         <Route path="/create-ticket" element={<CreateTicketPage />} />
         <Route path="/dashboard" element={<TicketManagementDashboard />} />
-        <Route path="/new-requirement" element={<NewRequirements />} />
+        {/* <Route path="/new-requirement" element={<NewRequirements />} /> */}
         {/* admin side */}
 
         <Route path="/admin" element={<Dashboard />} />
