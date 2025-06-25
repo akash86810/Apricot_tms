@@ -5,6 +5,7 @@ import Chips from '../../components/ui/MyTickets_components/Chips';
 import Tabs from '@/components/ui/FAQ_Components/Tabs';
 import PageHeader from '@/components/ui/MyTickets_components/PageHeader';
 import FilterSection from './FilterSection';
+import '@styles/My_Tickets/index.css';
 
 const TicketManagementDashboard = () => {
   const [tickets, setTickets] = useState([]);
@@ -154,7 +155,7 @@ const TicketManagementDashboard = () => {
 
   const getPriorityChips = (priority) => {
     return (
-      <div className="flex items-center gap-2">
+      <div className="myflex items-center gap-2">
         <img
           src="/images/img_iconamoonflagfill_red_a700.svg"
           alt="priority flag"
@@ -175,7 +176,7 @@ const TicketManagementDashboard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 font-poppins">
+    <div className="my-tickets min-h-screen bg-gray-50 font-poppins">
       <PageHeader />
 
       {/* Tabs */}
