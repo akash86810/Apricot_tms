@@ -2,6 +2,10 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import AdminHeader from '@/Admin/components/AdminHeader';
 import Tabs from '../components/Tabs';
+import TeamBarChart from '../components/TeamBarChart';
+import TicketsSection from '../components/DashboardComponents/TicketsSection';
+import { todayTickets } from '../components/DashboardComponents/sampleTickets';
+
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -28,6 +32,8 @@ const Dashboard = () => {
     }
   };
 
+  
+
   return (
     <>
       <AdminHeader />
@@ -47,8 +53,8 @@ const Dashboard = () => {
         </button>
       </div>
 
-      <div className="w-[1460px] h-[150px] border border-gray-300 rounded-[20px] px-[30px] py-[20px] ml-8 mt-2">
-        <div className="flex flex-row gap-16">
+      <div className="w-[1850px] h-[140px] border border-gray-300 rounded-[20px] px-[30px] py-[20px] ml-8 mt-2">
+        <div className="flex flex-row gap-28">
           <div className="flex flex-col items-center w-20 gap-1">
             {/* Replace this with your own SVGs */}
             <svg
@@ -206,6 +212,25 @@ const Dashboard = () => {
           
         </div>
       </div>
+
+      <div className="flex flex-col lg:flex-row gap-5 items-start">
+  {/* Left Side: Chart */}
+  <div className="w-full lg:w-1/2">
+    <TeamBarChart />
+  </div>
+
+  {/* Right Side: Two Tickets Side-by-Side */}
+  <div className="w-full lg:w-1/2 flex flex-col lg:flex-row gap-5 mt-5">
+   
+      <TicketsSection title="Tickets Created Today" tickets={todayTickets} />
+   
+      <TicketsSection title="Critical Tickets" tickets={todayTickets} />
+   
+  </div>
+</div>
+
+
+         
     </>
   );
 };

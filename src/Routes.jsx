@@ -15,6 +15,9 @@ import TicketManagementDashboard from './pages/MyTickets';
 import NewRequirements from './pages/NewRequirements/NewRequirements';
 // import AdminHeader from '../../Apricot_tms/src/Admin/components/AdminHeader';
 import Dashboard from './Admin/pages/Dashboard';
+import TeamSupport from './Admin/pages/TeamSupport';
+
+// import NewRequirements from './Admin/pages/NewRequirements';
 const AppRoutes = () => {
   return (
     <Router>
@@ -33,6 +36,8 @@ const AppRoutes = () => {
             {/* admin side */}
 
         <Route path="/admin" element={<Dashboard/>} />
+        <Route path='/support-team' element={<TeamSupport/>} />        
+        
         
         
 
