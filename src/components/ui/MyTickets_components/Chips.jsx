@@ -21,7 +21,11 @@ const Chips = ({
     danger: 'bg-red-100 text-red-800',
     assigned: 'bg-blue-600 text-white',
     closed: 'bg-green-600 text-white',
+    created: 'bg-orange-600 text-white',
     high: 'bg-red-600 text-white',
+    critical: 'bg-red-600 text-white',
+    medium: 'bg-yellow-600 text-white',
+    low: 'bg-gray-800 text-white',
   };
 
   const sizes = {
@@ -30,7 +34,10 @@ const Chips = ({
     large: 'px-4 py-2 text-base',
   };
 
-  const ChipsClasses = `${baseClasses} ${variants[variant]} ${sizes[size]} ${className}`;
+  const chipVariant = variants[variant.toLowerCase()] || variants.default;
+  const chipSize = sizes[size] || sizes.medium;
+
+  const ChipsClasses = `${baseClasses} ${chipVariant} ${chipSize} ${className}`;
 
   return (
     <span className={ChipsClasses} {...props}>
@@ -41,6 +48,8 @@ const Chips = ({
           onClick={onClose}
           className="ml-1 hover:bg-black hover:bg-opacity-10 rounded-full p-0.5"
           type="button"
+          aria-label="Close chip"
+          title="Close"
         >
           <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
             <path
@@ -65,7 +74,11 @@ Chips.propTypes = {
     'danger',
     'assigned',
     'closed',
+    'created',
     'high',
+    'critical',
+    'medium',
+    'low',
   ]),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   icon: PropTypes.node,
