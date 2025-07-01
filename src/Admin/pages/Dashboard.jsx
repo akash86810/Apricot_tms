@@ -13,8 +13,8 @@ const Dashboard = () => {
   const tabs = [
     { label: 'Dashboard', path: '/admin' },
     { label: 'Tickets', path: '/admintickets' },
-    { label: 'Problem', path: '/problem' },
-    { label: 'Change Request', path: '/change-request' },
+    { label: 'Problem', path: '/adminproblem' },
+    { label: 'Change Request', path: '/adminrequests' },
     { label: 'Support Team', path: '/support-team' },
     { label: 'Roles', path: '/roles' },
     { label: 'Teams', path: '/teams' },

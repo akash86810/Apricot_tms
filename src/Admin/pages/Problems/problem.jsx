@@ -7,10 +7,10 @@ import PageHeader from '../../../../src/components/ui/MyTickets_components/PageH
 import FilterSection from '../../../../src/pages/MyTickets/FilterSection';
 import '../../../styles/My_Tickets/index.css';
 
-const Ticket = () => {
+const Problem = () => {
   const [tickets, setTickets] = useState([]);
   const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = useState(2); // Problem is the 3rd tab (index 2)
   const navigate = useNavigate();
 
   const tabs = [
@@ -25,8 +25,8 @@ const Ticket = () => {
     { label: 'New Requirement', key: 'new-requirement' },
     { label: 'Product Team', key: 'product-team' },
     { label: 'FAQ', key: 'faq', route: '/faq' },
-    // { label: 'Grid View', key: 'grid', route: '' },
-    { label: 'Create Ticket', key: 'create', route: '/admincreate-ticket' },
+    { label: 'Grid View', key: 'grid' },
+    { label: 'Create Case', key: 'create' },
   ];
 
   const ticketData = [
@@ -37,7 +37,7 @@ const Ticket = () => {
       status: 'Created',
       Stage: 'Implementation',
       RemainTime: '01:00 Hrs',
-      priority: 'Critical',
+      priority: 'high',
       reqDate: '11.02.2024',
       reqTime: '02:00 PM',
       reqBy: 'Admin',
@@ -56,7 +56,7 @@ const Ticket = () => {
       status: 'Assigned',
       Stage: 'Implementation',
       RemainTime: '01:00 Hrs',
-      priority: 'low',
+      priority: 'high',
       reqDate: '11.02.2024',
       reqTime: '02:00 PM',
       reqBy: 'John',
@@ -75,7 +75,7 @@ const Ticket = () => {
       status: 'Assigned',
       Stage: 'Implementation',
       RemainTime: '01:00 Hrs',
-      priority: 'Medium',
+      priority: 'high',
       reqDate: '11.02.2024',
       reqTime: '02:00 PM',
       reqBy: 'Admin',
@@ -159,18 +159,18 @@ const Ticket = () => {
   };
 
   return (
-    <div className="my-tickets h-screen overflow-hidden bg-gray-50 font-poppins flex flex-col">
+    <div className="my-tickets min-h-screen overflow-auto bg-gray-50 font-poppins flex flex-col">
       <PageHeader />
 
       <div>
         <Tabs
           tabs={tabs}
-          defaultActiveTab={0}
+          defaultActiveTab={2}
           onTabChange={(index, tab) => handleTabChange(index, tab)}
         />
       </div>
 
-      {tabs[activeTab].key === 'tickets' && (
+      {tabs[activeTab].key === 'problem' && (
         <>
           <div className="mb-4">
             <FilterSection />
@@ -181,10 +181,10 @@ const Ticket = () => {
               <thead className="bg-blue-600 text-white">
                 <tr>
                   <th className="px-4 py-2 cursor-pointer" onClick={() => handleSort('id')}>
-                    Ticket No{' '}
+                    Problem No{' '}
                     {sortConfig.key === 'id' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
                   </th>
-                  <th className="px-4 py-2">Ticket Title</th>
+                  <th className="px-4 py-2">Problem Title</th>
                   <th className="px-4 py-2">Assign</th>
                   <th className="px-4 py-2">Status</th>
                   <th className="px-4 py-2">Stage</th>
@@ -248,4 +248,4 @@ const Ticket = () => {
   );
 };
 
-export default Ticket;
+export default Problem;

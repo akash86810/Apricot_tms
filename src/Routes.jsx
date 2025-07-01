@@ -13,7 +13,7 @@ import SecondHeader from './components/ui/Headers/SecondHeader';
 import CreateTicketPage from './pages/Create_Tickets/CreateTicket';
 import TicketManagementDashboard from './pages/MyTickets';
 // import NewRequirements from './pages/NewRequirements/NewRequirements';
-
+import AdminCreateTicketPage from './pages/Create_Tickets/admin Create_tickets/AdminCreateTicket';
 // import AdminHeader from '../../Apricot_tms/src
 // /Admin/components/AdminHeader';
 import Dashboard from './Admin/pages/Dashboard';
@@ -23,6 +23,8 @@ import TeamSupport from './Admin/pages/TeamSupport';
 // import AdminLogin from './Admin/pages/AdminLogin/AdminLogin';
 import Adminlogin from './Admin/pages/AdminLogin/index';
 import Ticket from '../src/Admin/pages/Tickets/Tickets';
+import Problem from '../src/Admin/pages/Problems/problem';
+import Requests from './Admin/pages/Change Requests/Change_Requests';
 const AppRoutes = () => {
   return (
     <Router>
@@ -46,6 +48,9 @@ const AppRoutes = () => {
         {/* <Route path="/admin-login" element={<AdminLogin />} /> */}
         <Route path="/adminlogin" element={<Adminlogin />} />
         <Route path="/admintickets" element={<Ticket />} />
+        <Route path="/adminproblem" element={<Problem />} />
+        <Route path="/adminrequests" element={<Requests />} />
+        <Route path="/admincreate-ticket" element={<AdminCreateTicketPage />} />
       </Routes>
     </Router>
   );
