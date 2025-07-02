@@ -17,16 +17,16 @@ const Ticket = () => {
     { label: 'Dashboard', key: 'dashboard', route: '/admin' },
     { label: 'Tickets', key: 'tickets', route: '/admintickets' },
     { label: 'Problem', key: 'problem', route: '/adminproblem' },
-    { label: 'Change Requests', key: 'change-requests', route: '/adminrequests' },
-    { label: 'Support Team', key: 'support-team' },
-    { label: 'Roles', key: 'roles' },
+    { label: 'Change Requests', key: 'change-requests', route: '/adminchange-request' },
+    { label: 'Support Team', key: 'support-team', route: '/support-team' },
+    { label: 'Roles', key: 'roles', route: '/roles' },
     { label: 'Teams', key: 'teams' },
     { label: 'Clients', key: 'clients' },
     { label: 'New Requirement', key: 'new-requirement' },
     { label: 'Product Team', key: 'product-team' },
-    { label: 'FAQ', key: 'faq', route: '/faq' },
+    // { label: 'FAQ', key: 'faq', route: '' },
     // { label: 'Grid View', key: 'grid', route: '' },
-    { label: 'Create Ticket', key: 'create', route: '/admincreate-ticket' },
+    // { label: 'Create Ticket', key: 'create', route: '/admincreate-ticket' },
   ];
 
   const ticketData = [
