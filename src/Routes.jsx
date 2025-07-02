@@ -45,10 +45,14 @@ const AppRoutes = () => {
         {/* admin side */}
 
         <Route path="/admin" element={<Dashboard />} />
-        <Route path='/support-team' element={<TeamSupport/>} />
-        <Route path='/roles' element={<Roles/>} />
+        <Route path="/support-team" element={<TeamSupport />} />
+        <Route path="/roles" element={<Roles />} />
 
-        
+        <Route path="/admin-create-ticket" element={<AdminCreateTicketPage />} />
+        {/* <Route path="/add-user" element={<AddUser />} /> */}
+        <Route path="/admintickets" element={<Ticket />} />
+        <Route path="/adminproblem" element={<Problem />} />
+        <Route path="/adminchange-request" element={<Requests />} />
 
         {/* <Route path="/admin-login" element={<AdminLogin />} /> */}
         <Route path="/adminlogin" element={<Adminlogin />} />
