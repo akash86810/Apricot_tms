@@ -21,13 +21,9 @@ const CreateRequirementModal = ({ isOpen, onClose }) => {
           >
             Create Ticket
           </h2>
-          <button
-  onClick={onClose}
-  className="text-red-500 hover:text-red-700 text-xl font-bold"
->
-  ×
-</button>
-
+          <button onClick={onClose} className="text-red-500 hover:text-red-700 text-xl font-bold">
+            ×
+          </button>
         </div>
 
         {/* Row 1: Icon Label, Icon, Issue Title */}
@@ -40,11 +36,16 @@ const CreateRequirementModal = ({ isOpen, onClose }) => {
                 className="w-full h-full appearance-none rounded-lg border border-gray-300 px-4 text-[#667085] text-sm focus:outline-none"
                 defaultValue=""
               >
-                <option value="" disabled hidden>Icon Label</option>
+                <option value="" disabled hidden>
+                  Icon Label
+                </option>
                 <option value="Option1">Option 1</option>
                 <option value="Option2">Option 2</option>
               </select>
-              <ChevronDown className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400" size={16} />
+              <ChevronDown
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400"
+                size={16}
+              />
             </div>
           </div>
 
@@ -56,11 +57,16 @@ const CreateRequirementModal = ({ isOpen, onClose }) => {
                 className="w-full h-full appearance-none rounded-lg border border-gray-300 px-4 text-[#667085] text-sm focus:outline-none"
                 defaultValue=""
               >
-                <option value="" disabled hidden>Icon</option>
+                <option value="" disabled hidden>
+                  Icon
+                </option>
                 <option value="Option1">Option 1</option>
                 <option value="Option2">Option 2</option>
               </select>
-              <ChevronDown className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400" size={16} />
+              <ChevronDown
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400"
+                size={16}
+              />
             </div>
           </div>
 
@@ -108,11 +114,16 @@ const CreateRequirementModal = ({ isOpen, onClose }) => {
                 className="w-full h-full appearance-none rounded-lg border border-gray-300 px-4 text-[#667085] text-sm focus:outline-none"
                 defaultValue=""
               >
-                <option value="" disabled hidden>Tag</option>
+                <option value="" disabled hidden>
+                  Tag
+                </option>
                 <option value="Module1">Module 1</option>
                 <option value="Module2">Module 2</option>
               </select>
-              <ChevronDown className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400" size={16} />
+              <ChevronDown
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400"
+                size={16}
+              />
             </div>
           </div>
 
@@ -124,11 +135,16 @@ const CreateRequirementModal = ({ isOpen, onClose }) => {
                 className="w-full h-full appearance-none rounded-lg border border-gray-300 px-4 text-[#667085] text-sm focus:outline-none"
                 defaultValue=""
               >
-                <option value="" disabled hidden>Priority</option>
+                <option value="" disabled hidden>
+                  Priority
+                </option>
                 <option value="Icon1">Icon 1</option>
                 <option value="Icon2">Icon 2</option>
               </select>
-              <ChevronDown className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400" size={16} />
+              <ChevronDown
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400"
+                size={16}
+              />
             </div>
           </div>
         </div>
