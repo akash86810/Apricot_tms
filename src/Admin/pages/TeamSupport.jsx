@@ -11,9 +11,9 @@ const TeamSupport = () => {
 
   const tabs = [
     { label: 'Dashboard', path: '/admin' },
-    { label: 'Tickets', path: '/tickets' },
-    { label: 'Problem', path: '/problem' },
-    { label: 'Change Request', path: '/change-request' },
+    { label: 'Tickets', path: '/admintickets' },
+    { label: 'Problem', path: '/adminproblem' },
+    { label: 'Change Request', path: '/adminchange-request' },
     { label: 'Support Team', path: '/support-team' },
     { label: 'Roles', path: '/roles' },
     { label: 'Teams', path: '/teams' },
@@ -57,7 +57,7 @@ const TeamSupport = () => {
     <>
     <div className='Teamsupport'>
      <AdminHeader />
-            <Tabs tabs={tabs} defaultActiveTab={defaultActiveTab} onTabChange={handleTabChange} />
+      <Tabs tabs={tabs} defaultActiveTab={defaultActiveTab} onTabChange={handleTabChange} />
 
      <div className="bg-gray-100 min-h-screen">
       <UserBasicDetailsTable users={sampleUsers} />
