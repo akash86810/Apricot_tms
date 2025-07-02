@@ -7,6 +7,7 @@ import PageHeader from '../../../../src/components/ui/MyTickets_components/PageH
 import FilterSection from '../../../../src/pages/MyTickets/FilterSection';
 import '../../../styles/My_Tickets/index.css';
 
+
 const Ticket = () => {
   const [tickets, setTickets] = useState([]);
   const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });

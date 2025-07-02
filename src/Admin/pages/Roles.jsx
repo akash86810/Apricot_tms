@@ -11,11 +11,11 @@ const Roles = () => {
     
     const navigate = useNavigate();
 
-    const tabs = [
+   const tabs = [
     { label: 'Dashboard', path: '/admin' },
-    { label: 'Tickets', path: '/tickets' },
-    { label: 'Problem', path: '/problem' },
-    { label: 'Change Request', path: '/change-request' },
+    { label: 'Tickets', path: '/admintickets' },
+    { label: 'Problem', path: '/adminproblem' },
+    { label: 'Change Request', path: '/adminchange-request' },
     { label: 'Support Team', path: '/support-team' },
     { label: 'Roles', path: '/roles' },
     { label: 'Teams', path: '/teams' },

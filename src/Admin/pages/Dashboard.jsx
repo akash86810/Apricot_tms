@@ -8,16 +8,15 @@ import { todayTickets } from '../components/DashboardComponents/sampleTickets';
 import '../../styles/FAQ_css/FAQ.css';
 import { useLocation } from 'react-router-dom';
 
-
 const Dashboard = () => {
   const navigate = useNavigate();
-     const location = useLocation();
- 
+  const location = useLocation();
+
   const tabs = [
     { label: 'Dashboard', path: '/admin' },
     { label: 'Tickets', path: '/admintickets' },
     { label: 'Problem', path: '/adminproblem' },
-    { label: 'Change Request', path: '/adminrequests' },
+    { label: 'Change Request', path: '/adminchange-request' },
     { label: 'Support Team', path: '/support-team' },
     { label: 'Roles', path: '/roles' },
     { label: 'Teams', path: '/teams' },
@@ -27,7 +26,6 @@ const Dashboard = () => {
   ];
 
   const defaultActiveTab = tabs.findIndex((tab) => tab.path === location.pathname);
-
 
   const handleTabChange = (tabIndex) => {
     const selectedTab = tabs[tabIndex];
@@ -42,7 +40,7 @@ const Dashboard = () => {
     <>
       <div className="dashboard">
         <AdminHeader />
-              <Tabs tabs={tabs} defaultActiveTab={defaultActiveTab} onTabChange={handleTabChange} />
+        <Tabs tabs={tabs} defaultActiveTab={defaultActiveTab} onTabChange={handleTabChange} />
 
         <div className=" flex items-center justify-start px-6 py-4 gap-4 flex-wrap">
           {/* Dashboard Title */}
