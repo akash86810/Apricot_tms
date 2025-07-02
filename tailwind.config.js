@@ -19,6 +19,7 @@ module.exports = {
         poppins: ['Poppins', 'sans-serif'],
         'league-spartan': ['League Spartan', 'sans-serif'],
         roboto: ['Roboto', 'sans-serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
       },
       colors: {
         // Primary group
@@ -45,6 +46,7 @@ module.exports = {
           foreground: 'var(--accent-foreground, #ffffff)',
           light: 'var(--accent-light)',
           dark: 'var(--accent-dark)',
+          blue: 'var(--accent-blue,#0B60B0)',
         },
         // Background group
         background: {
@@ -73,6 +75,7 @@ module.exports = {
           heading: '#344054',
           darkgray:'#344054',
           lightgray:'#667085',
+          
         },
         // Status group
         status: {
@@ -91,6 +94,10 @@ module.exports = {
         light: '0px 1px 2px rgba(16, 24, 40, 0.05)',
         medium: '0px 2px 5px rgba(16, 24, 40, 0.12)',
       },
+
+
+      
+      
     },
     
   },

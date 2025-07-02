@@ -6,10 +6,13 @@ import TeamBarChart from '../components/TeamBarChart';
 import TicketsSection from '../components/DashboardComponents/TicketsSection';
 import { todayTickets } from '../components/DashboardComponents/sampleTickets';
 import '../../styles/FAQ_css/FAQ.css';
+import { useLocation } from 'react-router-dom';
+
 
 const Dashboard = () => {
   const navigate = useNavigate();
-
+     const location = useLocation();
+ 
   const tabs = [
     { label: 'Dashboard', path: '/admin' },
     { label: 'Tickets', path: '/tickets' },
@@ -22,6 +25,9 @@ const Dashboard = () => {
     { label: 'New Request', path: '/new-request' },
     { label: 'Product Team', path: '/product-team' },
   ];
+
+  const defaultActiveTab = tabs.findIndex((tab) => tab.path === location.pathname);
+
 
   const handleTabChange = (tabIndex) => {
     const selectedTab = tabs[tabIndex];
@@ -36,7 +42,8 @@ const Dashboard = () => {
     <>
       <div className="dashboard">
         <AdminHeader />
-        <Tabs tabs={tabs} defaultActiveTab={1} onTabChange={handleTabChange} />
+              <Tabs tabs={tabs} defaultActiveTab={defaultActiveTab} onTabChange={handleTabChange} />
+
         <div className=" flex items-center justify-start px-6 py-4 gap-4 flex-wrap">
           {/* Dashboard Title */}
           <h2 className="text-[#0B60B0] text-[24px] font-medium font-['Inter'] leading-none">

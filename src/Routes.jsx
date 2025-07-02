@@ -22,6 +22,8 @@ import TeamSupport from './Admin/pages/TeamSupport';
 // import NewRequirements from './Admin/pages/NewRequirements';
 // import AdminLogin from './Admin/pages/AdminLogin/AdminLogin';
 import Adminlogin from './Admin/pages/AdminLogin/index';
+import AddUser from './Admin/components/TeamSupportComponents/AddUser';
+import Roles from './Admin/pages/Roles';
 const AppRoutes = () => {
   return (
     <Router>
@@ -40,11 +42,14 @@ const AppRoutes = () => {
         {/* admin side */}
 
         <Route path="/admin" element={<Dashboard />} />
-        <Route path='/support-team' element={<TeamSupport/>} />        
+        <Route path='/support-team' element={<TeamSupport/>} />
+        <Route path='/roles' element={<Roles/>} />
+
         
 
         {/* <Route path="/admin-login" element={<AdminLogin />} /> */}
         <Route path="/adminlogin" element={<Adminlogin />} />
+         <Route path="/add-user" element={<AddUser />} />
       </Routes>
     </Router>
   );

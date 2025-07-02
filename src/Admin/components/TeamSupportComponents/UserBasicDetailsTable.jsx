@@ -1,6 +1,11 @@
 import React from "react";
-
+import { useNavigate } from "react-router-dom";
 const UserBasicDetailsTable = ({ users }) => {
+  const navigate = useNavigate(); 
+
+  const handleAddUser = () => {
+    navigate("/add-user"); // 👈 route to AddUser page
+  };
   return (
     <div className="p-4">
       <div className="flex justify-between items-center mb-4">
@@ -24,12 +29,18 @@ const UserBasicDetailsTable = ({ users }) => {
 </div>
 
 
-        <button className=" text-white px-4 py-2 rounded " style={{ backgroundColor: "#0B60B0" }}>+ Add User</button>
+       <button
+  className="text-white px-4 py-2 rounded"
+  style={{ backgroundColor: "#0B60B0" }}
+  onClick={handleAddUser}
+>
+  + Add User
+</button>
       </div>
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white border border-gray-300">
           <thead className=" text-white text-sm" style={{ backgroundColor: "#006FC9" }}>
-            <tr>
+            <tr className="font-inter">
               <th className="px-4 py-2 border">User ID</th>
               <th className="px-4 py-2 border">User Name</th>
               <th className="px-4 py-2 border">First Name</th>

@@ -31,3 +31,34 @@ body {
   margin: 0;
   padding: 0;
 }
+.Teamsupport{
+  transform: scale(0.8);
+  transform-origin: top left;
+  width: 125%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.adduser{
+  transform: scale(0.8);
+  transform-origin: top left;
+  width: 125%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.roles{
+  transform: scale(0.8);
+  transform-origin: top left;
+  width: 125%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+.blue-accent {
+    accent-color: #0B60B0;
+  }

@@ -83,4 +83,14 @@
   .shadow-medium {
     box-shadow: 0px 2px 5px var(--shadow-medium);
   }
+
+
+  .no-scrollbar {
+    -ms-overflow-style: none;     /* IE & Edge */
+    scrollbar-width: none;        /* Firefox */
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;                /* Chrome, Safari */
+  }
 }

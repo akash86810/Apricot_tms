@@ -3,8 +3,10 @@ import AdminHeader from '../components/AdminHeader';
 import { useNavigate } from 'react-router-dom';
 import Tabs from '../components/Tabs';
 import UserBasicDetailsTable from '../components/TeamSupportComponents/UserBasicDetailsTable';
+import { useLocation } from 'react-router-dom';
 const TeamSupport = () => {
-
+    const location = useLocation();
+    
     const navigate = useNavigate();
 
   const tabs = [
@@ -19,7 +21,8 @@ const TeamSupport = () => {
     { label: 'New Request', path: '/new-request' },
     { label: 'Product Team', path: '/product-team' },
   ];
-
+  const defaultActiveTab = tabs.findIndex((tab) => tab.path === location.pathname);
+   
   const handleTabChange = (tabIndex) => {
     const selectedTab = tabs[tabIndex];
     if (selectedTab?.path) {
@@ -52,10 +55,13 @@ const TeamSupport = () => {
 
   return (
     <>
+    <div className='Teamsupport'>
      <AdminHeader />
-      <Tabs tabs={tabs} onTabChange={handleTabChange} />
+            <Tabs tabs={tabs} defaultActiveTab={defaultActiveTab} onTabChange={handleTabChange} />
+
      <div className="bg-gray-100 min-h-screen">
       <UserBasicDetailsTable users={sampleUsers} />
+    </div>
     </div>
 
     </>
