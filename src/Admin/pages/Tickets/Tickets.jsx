@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Button from '../../../../src/components/ui/MyTickets_components/Button';
 import Chips from '../../../../src/components/ui/MyTickets_components/Chips';
 import Tabs from '../../../../src/components/ui/FAQ_Components/Tabs';
@@ -7,12 +7,9 @@ import PageHeader from '../../../../src/components/ui/MyTickets_components/PageH
 import FilterSection from '../../../../src/pages/MyTickets/FilterSection';
 import '../../../styles/My_Tickets/index.css';
 
-
 const Ticket = () => {
-  const [tickets, setTickets] = useState([]);
-  const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
-  const [activeTab, setActiveTab] = useState(0);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const tabs = [
     { label: 'Dashboard', key: 'dashboard', route: '/admin' },
@@ -25,10 +22,22 @@ const Ticket = () => {
     { label: 'Clients', key: 'clients' },
     { label: 'New Requirement', key: 'new-requirement' },
     { label: 'Product Team', key: 'product-team' },
-    // { label: 'FAQ', key: 'faq', route: '' },
-    // { label: 'Grid View', key: 'grid', route: '' },
-    // { label: 'Create Ticket', key: 'create', route: '/admincreate-ticket' },
   ];
+
+  const [activeTab, setActiveTab] = useState(() => {
+    const index = tabs.findIndex((tab) => tab.route === location.pathname);
+    return index >= 0 ? index : 0;
+  });
+
+  useEffect(() => {
+    const index = tabs.findIndex((tab) => tab.route === location.pathname);
+    if (index >= 0 && index !== activeTab) {
+      setActiveTab(index);
+    }
+  }, [location.pathname]);
+
+  const [tickets, setTickets] = useState([]);
+  const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
 
   const ticketData = [
     {
@@ -166,7 +175,7 @@ const Ticket = () => {
       <div>
         <Tabs
           tabs={tabs}
-          defaultActiveTab={0}
+          defaultActiveTab={activeTab}
           onTabChange={(index, tab) => handleTabChange(index, tab)}
         />
       </div>
