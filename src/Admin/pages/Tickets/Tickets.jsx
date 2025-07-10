@@ -14,6 +14,8 @@ const Ticket = () => {
   const tabs = [
     { label: 'Dashboard', key: 'dashboard', route: '/admin' },
     { label: 'Tickets', key: 'tickets', route: '/admintickets' },
+    { label: 'List View', key: 'list' }, // no route
+    { label: 'Grid View', key: 'grid' }, // no route
     { label: 'Problem', key: 'problem', route: '/adminproblem' },
     { label: 'Change Requests', key: 'change-requests', route: '/adminchange-request' },
     { label: 'Support Team', key: 'support-team', route: '/support-team' },
@@ -23,6 +25,8 @@ const Ticket = () => {
     { label: 'New Requirement', key: 'new-requirement' },
     { label: 'Product Team', key: 'product-team' },
   ];
+
+  const [viewType, setViewType] = useState('list');
 
   const [activeTab, setActiveTab] = useState(() => {
     const index = tabs.findIndex((tab) => tab.route === location.pathname);
@@ -165,7 +169,13 @@ const Ticket = () => {
 
   const handleTabChange = (index, tab) => {
     setActiveTab(index);
-    if (tab.route) navigate(tab.route);
+    if (tab.key === 'list') {
+      setViewType('list');
+    } else if (tab.key === 'grid') {
+      setViewType('grid');
+    } else if (tab.route) {
+      navigate(tab.route);
+    }
   };
 
   return (
@@ -182,76 +192,87 @@ const Ticket = () => {
 
       {tabs[activeTab].key === 'tickets' && (
         <>
-          <div className="mb-4">
-            <FilterSection />
-          </div>
+          {viewType === 'list' && (
+            <>
+              <div className="mb-4">
+                <FilterSection />
+              </div>
 
-          <div className="bg-white rounded-lg shadow flex-grow overflow-hidden">
-            <table className="w-full">
-              <thead className="bg-blue-600 text-white">
-                <tr>
-                  <th className="px-4 py-2 cursor-pointer" onClick={() => handleSort('id')}>
-                    Ticket No{' '}
-                    {sortConfig.key === 'id' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
-                  </th>
-                  <th className="px-4 py-2">Ticket Title</th>
-                  <th className="px-4 py-2">Assign</th>
-                  <th className="px-4 py-2">Status</th>
-                  <th className="px-4 py-2">Stage</th>
-                  <th className="px-4 py-2">Remain Time</th>
-                  <th className="px-4 py-2">Priority</th>
-                  <th className="px-4 py-2">Req Date</th>
-                  <th className="px-4 py-2">Req Time</th>
-                  <th className="px-4 py-2">Req By</th>
-                  <th className="px-4 py-2">Ticket Owner</th>
-                  <th className="px-4 py-2">Updated Date</th>
-                  <th className="px-4 py-2">Updated Time</th>
-                  <th className="px-4 py-2">Updated By</th>
-                  <th className="px-4 py-2">Module</th>
-                  <th className="px-4 py-2">Sub Module</th>
-                  <th className="px-4 py-2">Icon</th>
-                </tr>
-              </thead>
-              <tbody>
-                {tickets.map((ticket, index) => (
-                  <tr
-                    key={ticket.id + index}
-                    className={index % 2 === 0 ? 'bg-blue-50' : 'bg-white'}
-                  >
-                    <td className="px-4 py-2">{ticket.id}</td>
-                    <td className="px-4 py-2">{ticket.title}</td>
-                    <td className="px-4 py-2">{ticket.Assign}</td>
-                    <td className="px-4 py-2">{getStatusChips(ticket.status)}</td>
-                    <td className="px-4 py-2">{ticket.Stage}</td>
-                    <td className="px-4 py-2">{ticket.RemainTime}</td>
-                    <td className="px-4 py-2">{getPriorityChips(ticket.priority)}</td>
-                    <td className="px-4 py-2">{ticket.reqDate}</td>
-                    <td className="px-4 py-2">{ticket.reqTime}</td>
-                    <td className="px-4 py-2">{ticket.reqBy}</td>
-                    <td className="px-4 py-2">{ticket.ticketOwner}</td>
-                    <td className="px-4 py-2">{ticket.updatedDate}</td>
-                    <td className="px-4 py-2">{ticket.updatedTime}</td>
-                    <td className="px-4 py-2">{ticket.updatedBy}</td>
-                    <td className="px-4 py-2">{ticket.module}</td>
-                    <td className="px-4 py-2">{ticket.subModule}</td>
-                    <td className="px-4 py-2">{ticket.icon}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+              <div className="bg-white rounded-lg shadow flex-grow overflow-hidden">
+                <table className="w-full">
+                  <thead className="bg-blue-600 text-white">
+                    <tr>
+                      <th className="px-4 py-2 cursor-pointer" onClick={() => handleSort('id')}>
+                        Ticket No{' '}
+                        {sortConfig.key === 'id' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
+                      </th>
+                      <th className="px-4 py-2">Ticket Title</th>
+                      <th className="px-4 py-2">Assign</th>
+                      <th className="px-4 py-2">Status</th>
+                      <th className="px-4 py-2">Stage</th>
+                      <th className="px-4 py-2">Remain Time</th>
+                      <th className="px-4 py-2">Priority</th>
+                      <th className="px-4 py-2">Req Date</th>
+                      <th className="px-4 py-2">Req Time</th>
+                      <th className="px-4 py-2">Req By</th>
+                      <th className="px-4 py-2">Ticket Owner</th>
+                      <th className="px-4 py-2">Updated Date</th>
+                      <th className="px-4 py-2">Updated Time</th>
+                      <th className="px-4 py-2">Updated By</th>
+                      <th className="px-4 py-2">Module</th>
+                      <th className="px-4 py-2">Sub Module</th>
+                      <th className="px-4 py-2">Icon</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {tickets.map((ticket, index) => (
+                      <tr
+                        key={ticket.id + index}
+                        className={index % 2 === 0 ? 'bg-blue-50' : 'bg-white'}
+                      >
+                        <td className="px-4 py-2">{ticket.id}</td>
+                        <td className="px-4 py-2">{ticket.title}</td>
+                        <td className="px-4 py-2">{ticket.Assign}</td>
+                        <td className="px-4 py-2">{getStatusChips(ticket.status)}</td>
+                        <td className="px-4 py-2">{ticket.Stage}</td>
+                        <td className="px-4 py-2">{ticket.RemainTime}</td>
+                        <td className="px-4 py-2">{getPriorityChips(ticket.priority)}</td>
+                        <td className="px-4 py-2">{ticket.reqDate}</td>
+                        <td className="px-4 py-2">{ticket.reqTime}</td>
+                        <td className="px-4 py-2">{ticket.reqBy}</td>
+                        <td className="px-4 py-2">{ticket.ticketOwner}</td>
+                        <td className="px-4 py-2">{ticket.updatedDate}</td>
+                        <td className="px-4 py-2">{ticket.updatedTime}</td>
+                        <td className="px-4 py-2">{ticket.updatedBy}</td>
+                        <td className="px-4 py-2">{ticket.module}</td>
+                        <td className="px-4 py-2">{ticket.subModule}</td>
+                        <td className="px-4 py-2">{ticket.icon}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
 
-          <div className="mt-4 flex justify-between items-center text-sm text-gray-600">
-            <div>Showing {tickets.length} tickets</div>
-            <div className="flex gap-2">
-              <Button variant="outline" size="small" disabled>
-                Previous
-              </Button>
-              <Button variant="outline" size="small" disabled>
-                Next
-              </Button>
+              <div className="mt-4 flex justify-between items-center text-sm text-gray-600">
+                <div>Showing {tickets.length} tickets</div>
+                <div className="flex gap-2">
+                  <Button variant="outline" size="small" disabled>
+                    Previous
+                  </Button>
+                  <Button variant="outline" size="small" disabled>
+                    Next
+                  </Button>
+                </div>
+              </div>
+            </>
+          )}
+
+          {viewType === 'grid' && (
+            <div className="text-center text-gray-500 p-10">
+              {/* Replace this with actual grid layout */}
+              <p>🔲 Grid View - Coming Soon</p>
             </div>
-          </div>
+          )}
         </>
       )}
     </div>
